@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: liquibase-job-v1
+spec:
+  template:
+    spec:
+      containers:
+        - name: liquibase
+          image: spider/liquibase
+          env:
+            - name: URL
+              value: jdbc:postgresql://postgres:5432/db
+            - name: USERNAME
+              value: user
+            - name: PASSWORD
+              value: pass
+            - name: CHANGELOGFILE
+              value: changelog.sql
+          volumeMounts:
+            - name: config-vol
+              mountPath: /liquibase/changelog
+      restartPolicy: Never
+      volumes:
+        - name: config-vol
+          configMap:
+            name: liquibase-changelog-v1
