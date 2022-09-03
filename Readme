@@ -1,0 +1,5 @@
+1) Budujemy Bazę - nadajemy nazwę bazy, usera, hasło i nazwę kontenera
+2) budujemy Changelog-a w Config Map-ie
+3) tworzymy IS o nazwie takiej jak podany obraz w Job-ie - oc create is liquibase
+4) tworzymy buildconfig z pliku
+5) tworzymy Job-a

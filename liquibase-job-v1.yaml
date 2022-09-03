@@ -7,10 +7,10 @@ spec:
     spec:
       containers:
         - name: liquibase
-          image: spider/liquibase
+          image: default-route-openshift-image-registry.apps.cluster-kd7fp.kd7fp.sandbox1539.opentlc.com/aaatest/liquibase
           env:
             - name: URL
-              value: jdbc:postgresql://postgres:5432/db
+              value: jdbc:postgresql://postgresql:5432/db
             - name: USERNAME
               value: user
             - name: PASSWORD

@@ -1,0 +1,19 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  name: liquibase
+  namespace: aaatest
+spec:
+  source:
+    type: Git
+    git:
+      uri: 'https://github.com/Spider-Art/Liquibase.git'
+    contextDir: /
+  strategy:
+    type: Docker
+    dockerStrategy:
+      dockerfilePath: Dockerfile
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'liquibase:latest'
