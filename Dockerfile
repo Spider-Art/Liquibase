@@ -7,4 +7,4 @@ ENV CHANGELOGFILE=changelog.sql
 RUN chown -R 1001:0 /liquibase
 RUN chown -R 1001:0 /usr/local/bin/liquibase
 USER 1001
-CMD ["sh", "-c", "docker-entrypoint.sh --url=${URL} --username=${USERNAME} --password=${PASSWORD} --classpath=/liquibase/changelog --changeLogFile=${CHANGELOGFILE} update"]
+CMD ["sh", "-c", "liquibase --url=${URL} --username=${USERNAME} --password=${PASSWORD} --classpath=/liquibase/changelog --changeLogFile=${CHANGELOGFILE} update"]
