@@ -1,4 +1,5 @@
 FROM liquibase/liquibase:latest
+USER 0
 ENV URL=jdbc:postgresql://postgresql:5432/db
 ENV USERNAME=user
 ENV PASSWORD=pass
